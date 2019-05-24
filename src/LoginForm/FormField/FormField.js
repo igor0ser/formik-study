@@ -3,7 +3,16 @@ import capitalize from 'lodash/capitalize';
 import './FormField.css';
 
 const FormField = ({
-  label, name, type, placeholder, required, values, handleChange, handleBlur, touched, errors
+  label,
+  name,
+  type,
+  placeholder,
+  required,
+  values,
+  handleChange,
+  handleBlur,
+  touched,
+  errors,
 }) => (
   <label className="FormField">
     {label || capitalize(name)}:

@@ -4,7 +4,6 @@ import FormField from '../FormField/FormField.js';
 import './Form.css';
 
 const Form = (props) => {
-  console.log(props.touched);
   return (
     <form onSubmit={props.handleSubmit} className="Form">
       <FormField
