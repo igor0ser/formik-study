@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { Formik } from 'formik/dist/index';
+import React, { Component, Fragment } from 'react';
+import { Formik } from 'formik';
 import noop from 'lodash/noop';
 import { LoginForm } from './LoginForm';
 import { validationSchema } from '../validate';
+import { Debug } from '../../Debug'
 
 import './styles.css';
 
@@ -23,7 +24,12 @@ export class LoginFormWrapper extends Component {
 
   renderFormComponent = (formikProps) => {
     this.outsideSumbit = formikProps.submitForm
-    return <LoginForm {...formikProps} />;
+    return (
+      <Fragment>
+        <LoginForm {...formikProps} />
+        <Debug/>
+      </Fragment>
+    );
   }
 
   render() {
@@ -35,7 +41,8 @@ export class LoginFormWrapper extends Component {
           initialValues={initialValues}
           onSubmit={submit}
           validationSchema={validationSchema}
-        />
+        >
+        </Formik>
         <button onClick={this.outsideSumbit}>Submit outside</button>
       </div>
     );

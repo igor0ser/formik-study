@@ -16,6 +16,7 @@ export const LoginForm = (props) => {
       <button type="submit">
         Submit
       </button>
+      <hr />
     </form>
   );
 };
