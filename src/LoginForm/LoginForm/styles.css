@@ -1,0 +1,22 @@
+.LoginFormWrapper {
+  padding: 10px;
+  width: 300px;
+  margin: auto;
+  border: 2px dashed gold;
+}
+
+.LoginFormWrapper h2 {
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.LoginForm {
+  width: 300px;
+  margin: auto;
+}
+
+.LoginForm button {
+  padding: 5px;
+  background-color: gold;
+  margin-bottom: 16px;
+}

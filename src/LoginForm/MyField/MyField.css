@@ -1,4 +1,4 @@
-.FormField {
+.field {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -7,12 +7,12 @@
   font-weight: 300;
 }
 
-.FormField input {
+.field input {
   font-size: 16px;
   padding: 4px;
 }
 
-.FormField__error {
+.field__error {
   width: 100%;
   padding: 8px;
   margin-top: 8px;

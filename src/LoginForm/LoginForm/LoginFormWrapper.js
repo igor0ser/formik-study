@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Formik } from 'formik';
+import { Formik } from 'formik/dist/index';
 import noop from 'lodash/noop';
-import Form from './Form/Form';
-import { validationSchema } from './validate';
+import { LoginForm } from './LoginForm';
+import { validationSchema } from '../validate';
 
-import './FormikWrapper.css';
+import './styles.css';
 
 const initialValues = {
   email: '',
@@ -18,17 +18,17 @@ const submit = (values, actions) => {
   console.groupEnd();
 }
 
-class FormikWrapper extends Component {
+export class LoginFormWrapper extends Component {
   outsideSumbit = noop
 
   renderFormComponent = (formikProps) => {
     this.outsideSumbit = formikProps.submitForm
-    return <Form {...formikProps} />;
+    return <LoginForm {...formikProps} />;
   }
 
   render() {
     return (
-      <div className="FormikWrapper">
+      <div className="LoginFormWrapper">
         <h2>Login</h2>
         <Formik
           render={this.renderFormComponent}
@@ -41,5 +41,3 @@ class FormikWrapper extends Component {
     );
   }
 }
-
-export default FormikWrapper;

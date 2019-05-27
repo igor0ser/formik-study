@@ -1,17 +1,15 @@
 import React from 'react';
-import FormField from '../FormField/FormField.js';
+import { MyField } from '../MyField/MyField.js';
 
-import './Form.css';
-
-const Form = (props) => {
+export const LoginForm = (props) => {
   return (
-    <form onSubmit={props.handleSubmit} className="Form">
-      <FormField
+    <form onSubmit={props.handleSubmit} className="LoginForm">
+      <MyField
         name="email"
         placeholder="test@email.com"
         {...props}
       />
-      <FormField
+      <MyField
         name="password"
         {...props}
       />
@@ -21,5 +19,3 @@ const Form = (props) => {
     </form>
   );
 };
-
-export default Form

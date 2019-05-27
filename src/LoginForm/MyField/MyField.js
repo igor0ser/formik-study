@@ -1,20 +1,19 @@
 import React from 'react';
 import capitalize from 'lodash/capitalize';
-import './FormField.css';
+import './MyField.css';
 
-const FormField = ({
+export const MyField = ({
   label,
   name,
   type,
   placeholder,
-  required,
   values,
   handleChange,
   handleBlur,
   touched,
   errors,
 }) => (
-  <label className="FormField">
+  <label className="field">
     {label || capitalize(name)}:
     <input
         name={name}
@@ -25,11 +24,9 @@ const FormField = ({
         onBlur={handleBlur}
     />
     {touched[name] && errors[name] && (
-      <div className="FormField__error">
+      <div className="field__error">
         {errors[name]}
       </div>
     )}
   </label>
 );
-
-export default FormField;
