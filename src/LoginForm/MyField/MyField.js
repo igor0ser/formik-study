@@ -1,32 +1,27 @@
 import React from 'react';
 import capitalize from 'lodash/capitalize';
+import { Field, ErrorMessage } from 'formik'
 import './MyField.css';
+
+const MyErrorMessage = ({ children }) => (
+  <div className="field__error">
+    {children}
+  </div>
+)
 
 export const MyField = ({
   label,
   name,
   type,
   placeholder,
-  values,
-  handleChange,
-  handleBlur,
-  touched,
-  errors,
 }) => (
   <label className="field">
     {label || capitalize(name)}:
-    <input
-        name={name}
-        type={type || name}
-        placeholder={placeholder}
-        value={values[name]}
-        onChange={handleChange}
-        onBlur={handleBlur}
+    <Field
+      name={name}
+      type={type || name}
+      placeholder={placeholder}
     />
-    {touched[name] && errors[name] && (
-      <div className="field__error">
-        {errors[name]}
-      </div>
-    )}
+    <ErrorMessage name={name} component={MyErrorMessage} />
   </label>
 );
